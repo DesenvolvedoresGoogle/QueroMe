@@ -2,7 +2,8 @@ application: querome
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: true
+threadsafe: yes
+
 builtins:
 - remote_api: on
 
