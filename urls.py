@@ -11,10 +11,12 @@ admin.autodiscover()
 dbindexer.autodiscover()
 
 urlpatterns = patterns('',
-    ('^_ah/warmup$', 'djangoappengine.views.warmup'),
-    ('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
-    ('^admin/', include(admin.site.urls)),
+    url('^_ah/warmup$', 'djangoappengine.views.warmup'),
+    url('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
+    url('^admin/', include(admin.site.urls)),
 
-    ('^login/$', 'django.contrib.auth.views.login'),
-    ('^logout/$', 'django.contrib.auth.views.logout'),
+    url('^login/$', 'django.contrib.auth.views.login', name='login'),
+    url('^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+
+    url('^register/$', 'core.views.register', name='register'),
 )
