@@ -18,9 +18,6 @@ Tecnologias Utilizadas
 
 * App Engine (appengine.google.com)
 * Python (www.python.org)
-* Grunt (gruntjs.com)
-* Bower (bower.io)
-* Semantic UI (semantic-ui.com)
 
 Instalação
 ----------
