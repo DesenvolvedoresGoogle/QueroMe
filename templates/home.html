@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'system.html' %}
 {% block title %}quero.me!{% endblock %}
 
-{% block content %}
+{% block system %}
 <h1>Bem vindo!</h1>
 <p>
     {%if request.user.is_authenticated%}
@@ -11,10 +11,10 @@
                 <ul>
                     {% for w in request.user.wishlist_set.all %}
                         <li>{{ w.product }} - {{ w.image }}</li>
-                        <a href="{% url wish %}">Cadastre + desejos!</a>
                     {% empty %}
                         Não há produtos na sua wishlist. <a href="{% url "wish" %}">Cadastre agora!</a>
                     {% endfor %}
+                    <a href="{% url wish %}">Cadastre desejos!</a>
                 </ul>
             </p>
             Fazer <a href="{%url logout%}">Logout</a>
