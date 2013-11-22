@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<p>Fill the form below to login in the system ;)</p>
+<p>Preencha o formulário para logar no sistema ;)</p>
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p>Seu usuário e/ou senha estão inválidos. Tente novamente.</p>
 {% endif %}
 
 <form method="post" action="{% url django.contrib.auth.views.login %}">{% csrf_token %}
@@ -18,12 +18,14 @@
             <td>{{ form.password.label_tag }}</td>
             <td>{{ form.password }}</td>
         </tr>
-        
-        Don't have an account? <a href="{%url "register"%}"></a>Create your account here!
+
     </table>
 
     <input type="submit" value="login" />
     <input type="hidden" name="next" value="{{ next }}" />
+
+    <p>Não tem cadastro? <a href='{%url register %}'>Cadastre-se Agora!</a> Leva menos de 1 minuto.</p>
+
 </form>
 
 {% endblock %}
