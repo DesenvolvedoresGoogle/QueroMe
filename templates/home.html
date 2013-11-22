@@ -2,27 +2,14 @@
 {% block title %}It works!{% endblock %}
 
 {% block content %}
-<h1>It works!</h1>
+<h1>Bem vindo!</h1>
 <p>
-Your Django-nonrel installation is working fine. Now go and build something useful with it. :)
-</p>
-
-<p>
-If you'd like to learn more about using Django-nonrel take a look at the <a href="http://readthedocs.org/docs/django-nonrel">documentation</a>.
-You may also want to follow the <a href="https://github.com/django-nonrel">project on GitHub</a> or subscribe to its <a href="https://groups.google.com/group/django-non-relational">google group</a> so you don't miss any new features and improvements.
-</p>
-
-<p>
-If you're new to Django you should take a look at the <a href="http://docs.djangoproject.com/">Django documentation</a> and the <a href="http://www.djangobook.com/">Django book</a>.
-You'll also find <a href="http://djangosnippets.org/">djangosnippets</a> very useful.
-</p>
-
-<p>
-If you have an existing Django project that you'd like to use with a non-relational back-end or would simply like to learn what are the differences between the normal Django and its non-relational version take a look at: <a href="http://readthedocs.org/docs/django-nonrel/en/latest/content/porting.html">porting</a>.
-</p>
-
-<p>
-If you search for reusable apps that work with Django-nonrel here's a list to get you started:
+    {%if request.user.is_authenticated%}
+            Olá, {{request.user.first_name}} :)
+            Fazer <a href="{%url logout%}">Logout</a>
+    {%else%}
+        Olá, faca seu <a href="{%url login%}">Login</a> ou <a href="{%url register%}">Cadastre-se!</a>
+    {%endif%}
 </p>
 
 <ul>
