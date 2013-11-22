@@ -5,12 +5,15 @@ from forms import FormUserRegistration, WishlistForm
 from django.contrib.auth.decorators import login_required
 from filetransfers.api import prepare_upload
 from django.core.urlresolvers import reverse
+from django.contrib.auth import login as authlogin
 
 def register(request):
     if request.method == 'POST':
         form = FormUserRegistration(request.POST)
         if form.is_valid():
             new_user = form.save()
+#            new_user.user.backend = 'django.contrib.auth.backends.ModelBackend'
+#            authlogin(request, new_user)
             return HttpResponseRedirect("/")
     else:
         form = FormUserRegistration()
