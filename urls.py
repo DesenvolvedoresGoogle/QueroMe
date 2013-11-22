@@ -12,7 +12,7 @@ dbindexer.autodiscover()
 
 urlpatterns = patterns('',
     url('^_ah/warmup$', 'djangoappengine.views.warmup'),
-    url('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
+    url('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}, name='home'),
     url('^admin/', include(admin.site.urls)),
 
     url('^login/$', 'django.contrib.auth.views.login', name='login'),
