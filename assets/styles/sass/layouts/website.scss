@@ -1,0 +1,29 @@
+body {
+  background: url('../images/background.png');
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font: normal 13px 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+  &:hover {text-decoration: underline; }
+}
+
+/* Content */
+.page-content {
+  margin: 0 auto;
+  min-width: $content-width;
+  padding: 0 10px;
+  width: $content-width;
+
+  @include clearfix;
+}
+
+main {
+  flex: 1;
+  padding: 30px 0 50px !important;
+}

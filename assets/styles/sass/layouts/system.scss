@@ -8,20 +8,19 @@ body {
 }
 
 a {
-  color: #666666;
+  color: #666;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+  &:hover {text-decoration: underline; }
 }
 
 /* Content */
 .page-content {
-  @include clearfix;
-  width: $content-width;
-  min-width: $content-width;
   margin: 0 auto;
+  min-width: $content-width;
   padding: 0 10px;
+  width: $content-width;
+
+  @include clearfix;
 }
 
 .header {
