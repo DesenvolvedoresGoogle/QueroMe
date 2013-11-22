@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from random import sample
 from string import ascii_letters, join
 from django.core.urlresolvers import reverse
+from django.core.mail import send_mail
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
@@ -37,6 +38,7 @@ Por favor, ative sua conta. Para isso, clique no link abaixo para ativar o seu c
 Obrigado, e aproveite!
 Equipe quero.me """
         mensagem_txt = mensagem_txt % (self.user.first_name,self.user.last_name,link)
+        send_mail('[Quero.me]  Obrigado por se cadastrar',mensagem_txt,'contato@quero.me',[self.user.email])
     def save(self, *args, **kwargs):
         if not self.id and not self.user.is_active:
             #Se é a primeira vez é preciso gerar o código de verificação e enviar o e-mail de ativação

@@ -125,15 +125,12 @@ class FormUserRegistration(forms.ModelForm):
 
     def save(self,commit=True):
         #Salvando na tabela de Usuários
-        novo_usuario = User()
-        novo_usuario.username = self.cleaned_data.get('email')
-        novo_usuario.email = self.cleaned_data.get('email')
-        novo_usuario.set_password(self.cleaned_data.get('password'))
-        novo_usuario.first_name = self.cleaned_data.get('first_name')
-        novo_usuario.last_name = self.cleaned_data.get('last_name')
-        novo_usuario.is_active = False
-        novo_usuario.save()
-        perfil_usuario = Usuario()
-        perfil_usuario.user = novo_usuario
-        perfil_usuario.save()
-        return perfil_usuario
+        new_user = User()
+        new_user.username = self.cleaned_data.get('email')
+        new_user.email = self.cleaned_data.get('email')
+        new_user.set_password(self.cleaned_data.get('password'))
+        new_user.first_name = self.cleaned_data.get('first_name')
+        new_user.last_name = self.cleaned_data.get('last_name')
+        new_user.is_active = True
+        new_user.save()
+        return new_user
