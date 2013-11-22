@@ -58,7 +58,6 @@ django_mongodb_engine
 dbindexer
 autoload
 mediagenerator
-filetransfers
 mapreduce
 
 build
