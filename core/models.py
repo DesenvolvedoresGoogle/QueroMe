@@ -50,8 +50,14 @@ class UserProfile(models.Model):
 class Categorie(models.Model):
     category = models.CharField(max_length=200)
 
+    def __unicode__(self):
+        return unicode(self.category)
+
 class Wishlist(models.Model):
     user = models.ForeignKey(User)
     category =models.ForeignKey(Categorie, blank=True, null=True)
     product = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
+
+    def __unicode__(self):
+        return unicode(self.product)
