@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
