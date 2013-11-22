@@ -38,3 +38,8 @@ def wish(request):
         'upload_data': upload_data,
         }
     )
+
+def system_home(request):
+    return render(request, "system/index.html",
+        locals()
+    )

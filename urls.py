@@ -22,8 +22,10 @@ urlpatterns = patterns('',
     url('^wish/$', 'core.views.wish', name='wish'),
 
     #URL`s do novo layout.
-    (r'^system/(.*)$', 'django.views.static.serve',
-     {'document_root': 'templates/system/','show_indexes':True}),
+#    (r'^system/(.*)$', 'django.views.static.serve',
+#     {'document_root': 'templates/system/','show_indexes':True}),
+
+    url('^system/$', 'core.views.system_home', name='system_home'),
 
     (r'^website/(.*)$', 'django.views.static.serve',
      {'document_root': 'templates/website/','show_indexes':True}),
