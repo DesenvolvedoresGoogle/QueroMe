@@ -35,6 +35,17 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: '<%= meta.path.src %>/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: '<%= meta.path.dest %>/'
+        }]
+      }
+    },
+
     sass: {
       styles: {
         src: ['<%= meta.path.src %>/**/*.scss'],
@@ -68,10 +79,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass', 'concat', 'watch']);
-  grunt.registerTask('compile', ['sass', 'concat', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['sass', 'concat', 'imagemin', 'watch']);
+  grunt.registerTask('compile', ['sass', 'concat', 'imagemin', 'cssmin', 'uglify']);
 };
