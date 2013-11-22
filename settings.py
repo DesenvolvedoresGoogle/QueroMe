@@ -23,6 +23,7 @@ INSTALLED_APPS = (
 
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
+    'core',
 )
 
 MIDDLEWARE_CLASSES = (
