@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from filetransfers.api import prepare_upload
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login as authlogin
+from models import Wishlist
+from django.shortcuts import get_object_or_404
 
 def register(request):
     if request.method == 'POST':
@@ -57,7 +59,8 @@ def listar_desejos(request):
         locals()
     )
 
-def show(request):
+def show(request, wish_id):
+    wish = get_object_or_404(Wishlist,id=wish_id)
     return render(request, "system/show.html",
         locals()
     )
