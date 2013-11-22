@@ -139,3 +139,12 @@ class FormUserRegistration(forms.ModelForm):
 class WishlistForm(forms.ModelForm):
     class Meta:
         model = Wishlist
+        fields= ('category','product','description', 'file')
+
+#    def save(self, commit=True):
+#        from google.appengine.ext import blobstore
+#        upload_url = blobstore.create_upload_url('/upload')
+#        files = {'file': self.cleaned_data.get('image')}
+#        r = requests.post(upload_url, files = files)
+#        print r
+#        super(WishlistForm,self).save()

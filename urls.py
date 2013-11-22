@@ -19,4 +19,12 @@ urlpatterns = patterns('',
     url('^logout/$', 'django.contrib.auth.views.logout', name='logout'),
 
     url('^register/$', 'core.views.register', name='register'),
+    url('^wish/$', 'core.views.wish', name='wish'),
+
+    #URL`s do novo layout.
+    (r'^system/(.*)$', 'django.views.static.serve',
+     {'document_root': 'templates/system/','show_indexes':True}),
+
+    (r'^website/(.*)$', 'django.views.static.serve',
+     {'document_root': 'templates/website/','show_indexes':True}),
 )

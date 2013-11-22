@@ -5,6 +5,7 @@ from random import sample
 from string import ascii_letters, join
 from django.core.urlresolvers import reverse
 from django.core.mail import send_mail
+from djangotoolbox.fields import BlobField
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
@@ -54,10 +55,11 @@ class Categorie(models.Model):
         return unicode(self.category)
 
 class Wishlist(models.Model):
-    user = models.ForeignKey(User)
-    category =models.ForeignKey(Categorie, blank=True, null=True)
-    product = models.CharField(max_length=200)
-    description = models.TextField(blank=True, null=True)
-
+    user = models.ForeignKey(User, blank=True, null=True)
+    category = models.ForeignKey(Categorie, blank=True, null=True,verbose_name='Categoria')
+    product = models.CharField(max_length=200,verbose_name='Produto')
+    description = models.TextField(blank=True, null=True, verbose_name=u'Descrição')
+    image = BlobField(verbose_name='Imagem',blank=True, null = True)
+    file = models.FileField(upload_to='uploads/%Y/%m/%d/%H/%M/%S/')
     def __unicode__(self):
         return unicode(self.product)

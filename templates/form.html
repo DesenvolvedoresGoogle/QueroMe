@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Faça seus desejos!{% endblock %}
+
+{% block content %}
+    <h1>Cadastre seus desejos!</h1>
+
+{#    <form action="" method="POST">#}
+{#        {{ form.as_p }}#}
+{#        <input type="submit" value="Cadastrar desejo!">#}
+{#    </form>#}
+
+    {% load filetransfers %}
+    <form action="{{ upload_url }}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% render_upload_data upload_data %}
+        <table>{{ form }}</table>
+        <input type="submit" value="Upload" />
+    </form>
+
+{% endblock %}
