@@ -30,5 +30,9 @@ handlers:
   static_dir: django/contrib/admin/static/admin
   expiration: '0'
 
+- url: /static_files/
+  static_dir: static_files
+  expiration: '0'
+
 - url: /.*
   script: djangoappengine.main.application
