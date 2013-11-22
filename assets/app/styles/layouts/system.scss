@@ -1,0 +1,51 @@
+body {
+  background: url('../images/background.png');
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font: normal 13px 'Roboto', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: #666666;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Content */
+.page-content {
+  @include clearfix;
+  width: $content-width;
+  min-width: $content-width;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  [class*="column"] {
+    margin-top: 8px;
+  }
+
+  .logo {
+    img {
+      width: 255px;
+      height: 100px;
+    }
+  }
+
+  .user {
+    margin-top: 30px;
+    img {
+      border-radius: 100%;
+      display: block;
+    }
+  }
+}
+
+main {
+  flex: 1;
+  padding: 30px 0 50px !important;
+}
