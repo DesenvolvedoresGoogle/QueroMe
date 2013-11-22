@@ -37,3 +37,8 @@ indexes:
   properties:
   - name: __key__
     direction: desc
+
+- kind: core_wishlist
+  properties:
+  - name: __key__
+    direction: desc
