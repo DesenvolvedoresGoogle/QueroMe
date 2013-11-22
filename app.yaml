@@ -42,5 +42,13 @@ handlers:
   static_dir: assets/images
   expiration: '0'
 
+- url: /fonts
+  static_dir: assets/fonts
+  expiration: '0'
+
+- url: /scripts
+  static_dir: assets/scripts
+  expiration: '0'
+
 - url: /.*
   script: djangoappengine.main.application
