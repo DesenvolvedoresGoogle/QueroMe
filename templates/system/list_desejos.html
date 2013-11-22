@@ -6,12 +6,13 @@
         {% for w in request.user.wishlist_set.all %}
             <div class="item column-4">
                 <div class="image">
-                    <img src="http://placehold.it/300x200">
+                    <img src="http://placehold.it/300x200" alt="{{ w.product }}">
+                    <span class="ui ribbon label">{{ w.category }}</span>
                 </div>
                 <div class="content">
                     <h3 class="name">{{ w.product }}</h3>
                     <p class="description">{{ w.description }}</p>
-                    <span class="meta">minutos atrás</span>
+                    <span class="meta">2 minutos atrás</span>
                 </div>
             </div>
         {% empty %}
