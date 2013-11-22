@@ -7,15 +7,8 @@
     {%if request.user.is_authenticated%}
             Olá, {{request.user.first_name}} :)
             <p>
-                Estes são seus desejos cadastrados:
-                <ul>
-                    {% for w in request.user.wishlist_set.all %}
-                        <li>{{ w.product }} - {{ w.image }}</li>
-                    {% empty %}
-                        Não há produtos na sua wishlist. <a href="{% url "wish" %}">Cadastre agora!</a>
-                    {% endfor %}
-                    <a href="{% url wish %}">Cadastre desejos!</a>
-                </ul>
+                <a href="{% url listar %}">Você tem {{ request.user.wishlist_set.count }} desejos na sua lista.</a>
+                <a href="{% url wish %}">Cadastre + desejos!</a>
             </p>
             Fazer <a href="{%url logout%}">Logout</a>
     {%else%}

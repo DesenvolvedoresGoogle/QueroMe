@@ -60,6 +60,6 @@ class Wishlist(models.Model):
     product = models.CharField(max_length=200,verbose_name='Produto')
     description = models.TextField(blank=True, null=True, verbose_name=u'Descrição')
     image = BlobField(verbose_name='Imagem',blank=True, null = True)
-    file = models.FileField(upload_to='uploads/%Y/%m/%d/%H/%M/%S/')
+    file = models.FileField(upload_to='uploads/%Y/%m/%d/%H/%M/%S/',blank=True, null = True)
     def __unicode__(self):
         return unicode(self.product)
