@@ -34,11 +34,11 @@ handlers:
   static_dir: static_files
   expiration: '0'
 
-- url: /styles/
+- url: /styles
   static_dir: assets/styles
   expiration: '0'
 
-- url: /images/
+- url: /images
   static_dir: assets/images
   expiration: '0'
 
