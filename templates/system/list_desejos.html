@@ -1,0 +1,23 @@
+{% extends "system.html" %}
+
+{% block system %}
+    <div class="ui items">
+
+        {% for w in request.user.wishlist_set.all %}
+            <div class="item column-4">
+                <div class="image">
+                    <img src="http://placehold.it/300x200">
+                </div>
+                <div class="content">
+                    <h3 class="name">{{ w.product }}</h3>
+                    <p class="description">{{ w.description }}</p>
+                    <span class="meta">minutos atrás</span>
+                </div>
+            </div>
+        {% empty %}
+            Não há produtos na sua wishlist. <a href="{% url wish %}">Cadastre agora!</a>
+        {% endfor %}
+        <a href="{% url wish %}">Cadastre desejos!</a>
+
+    </div>
+{% endblock %}

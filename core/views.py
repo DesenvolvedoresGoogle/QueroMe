@@ -48,3 +48,8 @@ def website_home(request):
     return render(request, "website/index.html",
         locals()
     )
+
+def listar_desejos(request):
+    return render(request, "system/list_desejos.html",
+        locals()
+    )

@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "system.html" %}
 
 {% block title %}Faça seus desejos!{% endblock %}
 
-{% block content %}
+{% block system %}
     <h1>Cadastre seus desejos!</h1>
 
 {#    <form action="" method="POST">#}
@@ -15,7 +15,8 @@
         {% csrf_token %}
         {% render_upload_data upload_data %}
         <table>{{ form }}</table>
-        <input type="submit" value="Upload" />
+        <p>&nbsp;</p>
+        <input type="submit" value="Cadastrar desejo!" />
     </form>
 
 {% endblock %}
