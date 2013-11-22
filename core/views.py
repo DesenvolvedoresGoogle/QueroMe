@@ -14,8 +14,8 @@ def register(request):
         form = FormUserRegistration(request.POST)
         if form.is_valid():
             new_user = form.save()
-#            new_user.user.backend = 'django.contrib.auth.backends.ModelBackend'
-#            authlogin(request, new_user)
+            new_user.backend = 'django.contrib.auth.backends.ModelBackend'
+            authlogin(request, new_user)
             return HttpResponseRedirect("/")
     else:
         form = FormUserRegistration()
