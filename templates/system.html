@@ -18,19 +18,22 @@
 <header class="header">
   <div class="page-content">
     <div class="column-9">
-      <a href="#" class="logo">
+      <a href="{% url home %}" class="logo">
         <img src="/images/logo.png" alt="quero.me">
       </a>
     </div>
 
+  {%if request.user.is_authenticated%}
     <div class="add column-2">
       <a href="#" class="ui button green"><i class="icon icon-plus"></i> Quero</a>
     </div>
 
     <div class="user column-1">
-      <img src="http://graph.facebook.com/caiotarifa/picture?size=64x64" alt="Caio Tarifa">
+        <img src="http://graph.facebook.com/caiotarifa/picture?size=64x64" alt="Caio Tarifa">
     </div>
   </div>
+
+  {% endif %}
 </header>
 
 <main class="page-content">
