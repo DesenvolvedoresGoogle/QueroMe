@@ -1,0 +1,10 @@
+/* Globals */
+@import 'globals/variables';
+@import 'globals/mixins';
+
+/* Core */
+@import 'core/reset';
+@import 'core/grid';
+
+/* Layouts */
+@import 'layouts/website';
