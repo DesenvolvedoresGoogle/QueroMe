@@ -1,6 +1,7 @@
 # coding: utf-8
 from django import forms
 from django.contrib.auth.models import User
+from models import Wishlist
 
 class FormUserRegistration(forms.ModelForm):
     """
@@ -134,3 +135,7 @@ class FormUserRegistration(forms.ModelForm):
         new_user.is_active = True
         new_user.save()
         return new_user
+
+class WishlistForm(forms.ModelForm):
+    class Meta:
+        model = Wishlist

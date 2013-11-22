@@ -28,15 +28,15 @@ class UserProfile(models.Model):
         )
         mensagem_txt = u"""Bem vindo(a) Usuário %s %s,
 
-Parabéns! Você acaba de se tornar nosso usuário !
-É muito importante sua opinião para melhoria desta plataforma.
-Seu cadastro foi efetuado com sucesso e você está a um passo de poder receber excelentes ofertas e preços
-Por favor, ative sua conta. Para isso, clique no link abaixo para ativar o seu cadastro:
+                        Parabéns! Você acaba de se tornar nosso usuário !
+                        É muito importante sua opinião para melhoria desta plataforma.
+                        Seu cadastro foi efetuado com sucesso e você está a um passo de poder receber excelentes ofertas e preços
+                        Por favor, ative sua conta. Para isso, clique no link abaixo para ativar o seu cadastro:
 
-%s
+                        %s
 
-Obrigado, e aproveite!
-Equipe quero.me """
+                        Obrigado, e aproveite!
+                        Equipe quero.me """
         mensagem_txt = mensagem_txt % (self.user.first_name,self.user.last_name,link)
         send_mail('[Quero.me]  Obrigado por se cadastrar',mensagem_txt,'contato@quero.me',[self.user.email])
     def save(self, *args, **kwargs):
@@ -46,3 +46,12 @@ Equipe quero.me """
             self.create_verifying_code()
             self.enviar_email_ativacao()
         super(UserProfile,self).save(*args,**kwargs)
+
+class Categorie(models.Model):
+    category = models.CharField(max_length=200)
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(User)
+    category =models.ForeignKey(Categorie, blank=True, null=True)
+    product = models.CharField(max_length=200)
+    description = models.TextField(blank=True, null=True)
