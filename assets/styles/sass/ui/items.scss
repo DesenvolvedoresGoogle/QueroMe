@@ -8,6 +8,8 @@
     padding-bottom: 15px;
     position: relative;
 
+    &, &:before, &:after { @include transition(all 250ms ease); }
+
     &:before, &:after {
       background-color: rgba(0, 0, 0, 0.02);
       border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -23,12 +25,25 @@
       bottom: 0;
     }
 
+    &:hover {
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);;
+      @include transform(scale(1.05));
+      &, &:before, &:after {
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
     > .image {
+      position: relative;
       > img {
         border-radius: 2px;
-        
         display: block;
         width: 100%;
+      }
+
+      .ui.label.ribbon {
+        bottom: 10px;
+        position: absolute;
       }
     }
 

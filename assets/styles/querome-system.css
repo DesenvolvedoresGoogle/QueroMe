@@ -475,8 +475,8 @@ table {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.0.3");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  src: url("/fonts/fontawesome-webfont.eot?v=4.0.3");
+  src: url("/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1934,6 +1934,10 @@ table {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
   padding-bottom: 15px;
   position: relative; }
+  .ui.items .item, .ui.items .item:before, .ui.items .item:after {
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    transition: all 250ms ease; }
   .ui.items .item:before, .ui.items .item:after {
     background-color: rgba(0, 0, 0, 0.02);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -1945,10 +1949,24 @@ table {
     width: 100%; }
   .ui.items .item:before {
     bottom: 0; }
-  .ui.items .item > .image > img {
-    border-radius: 2px;
-    display: block;
-    width: 100%; }
+  .ui.items .item:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05); }
+    .ui.items .item:hover, .ui.items .item:hover:before, .ui.items .item:hover:after {
+      border-color: rgba(0, 0, 0, 0.2); }
+  .ui.items .item > .image {
+    position: relative; }
+    .ui.items .item > .image > img {
+      border-radius: 2px;
+      display: block;
+      width: 100%; }
+    .ui.items .item > .image .ui.label.ribbon {
+      bottom: 10px;
+      position: absolute; }
   .ui.items .item > .content .name {
     color: rgba(0, 0, 0, 0.7);
     font-size: 150%;
@@ -1961,6 +1979,34 @@ table {
     color: rgba(0, 0, 0, 0.25);
     display: block;
     text-align: right; }
+
+.ui.label {
+  background: #825aa6;
+  border-color: #652c90;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  text-transform: uppercase;
+  vertical-align: middle; }
+  .ui.label.ribbon {
+    border-radius: 0 2px 2px 0;
+    color: #fff;
+    display: inline-block;
+    left: -20px;
+    position: relative; }
+    .ui.label.ribbon:after {
+      border: 0 solid transparent;
+      border-top: 0 solid transparent;
+      border-right-width: 10px;
+      border-right-color: inherit;
+      border-right-style: solid;
+      border-bottom: 10px solid transparent;
+      border-left: 0 solid transparent;
+      content: '';
+      left: 0;
+      height: 0;
+      position: absolute;
+      top: 100%;
+      width: 0; }
 
 /* Layouts */
 body {
