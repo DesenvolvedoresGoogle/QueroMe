@@ -1,0 +1,14 @@
+{% extends "system.html" %}
+
+{% block system %}
+<h1>Cadastre seus desejos! 2</h1>
+
+{% load filetransfers %}
+<form action="{{ upload_url }}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% render_upload_data upload_data %}
+    <table>{{ form }}</table>
+    <p>&nbsp;</p>
+    <input type="submit" value="Cadastrar desejo!" />
+</form>
+{% endblock %}
