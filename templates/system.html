@@ -29,7 +29,8 @@
     </div>
 
     <div class="user column-1">
-        <img src="http://graph.facebook.com/caiotarifa/picture?size=64x64" alt="Caio Tarifa">
+        {% load gravatar %}
+        <img src="{% gravatar_for_email request.user.email %}" alt="Caio Tarifa">
     </div>
   {% endif %}
   </div>
