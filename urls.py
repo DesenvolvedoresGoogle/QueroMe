@@ -12,7 +12,7 @@ dbindexer.autodiscover()
 
 urlpatterns = patterns('',
     url('^_ah/warmup$', 'djangoappengine.views.warmup'),
-    url('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}, name='home'),
+#    url('^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}, name='home'),
     url('^admin/', include(admin.site.urls)),
 
     url('^login/$', 'django.contrib.auth.views.login', name='login'),
@@ -33,7 +33,7 @@ urlpatterns = patterns('',
 #     {'document_root': 'templates/website/','show_indexes':True}),
 
     url('^system/$', 'core.views.system_home', name='system_home'),
-    url('^website/$', 'core.views.website_home', name='website_home'),
+    url('^$', 'core.views.website_home', name='website_home'),
 
     url(r'^download/(?P<pk>.+)$', 'core.views.download_handler',name='dowload_img'),
 )

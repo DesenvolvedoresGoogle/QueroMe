@@ -33,7 +33,7 @@
         {% load gravatar %}
         <img src="{% gravatar_for_email request.user.email 50 g%}" alt="{{ request.user.first_name }}">
         <div class="menu">
-          <a href="#" class="item">Desconectar</a>
+          <a href="{% url logout %}" class="item">Desconectar</a>
         </div>
       </div>
     </div>

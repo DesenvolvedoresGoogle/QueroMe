@@ -73,6 +73,9 @@ def system_home(request):
     )
 
 def website_home(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect(reverse('core.views.listar_desejos'))
+
     controller = "website_home"
     method = "see"
     return render(request, "website/index.html",
