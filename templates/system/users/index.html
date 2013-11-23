@@ -1,11 +1,75 @@
 {% extends "system.html" %}
 
 {% block system %}
-<section class="column-6">
-  Login
+<section class="login column-6">
+  <h2>Entrar</h2>
+
+  <div class="social-login">
+    <p>Economize tempo, acesse sua conta utilizando o <strong>Google Plus</strong>.</p>
+    <a class="ui button red"><i class="icon icon-google-plus"></i>Entrar com o Google +</a>
+  </div>
+
+  <div class="ui divider horizontal">Ou</div>
+
+  <form class="ui form">
+    <p>Entre com os seus dados:</p>
+    
+    <div class="field">
+      <label>E-mail</label>
+      <div class="input prepend">
+        <div class="prepend"><i class="icon icon-envelope"></i></div>
+        <input type="email" placeholder="email@example.com" required autofocus>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Senha</label>
+      <div class="input prepend">
+        <div class="prepend"><i class="icon icon-lock"></i></div>
+        <input type="password" placeholder="*******" required>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="ui button green">Entrar</button>
+    </div>
+  </form>
 </section>
 
-<section class="column-6">
-  Cadastre-se
+<section class="register column-6">
+  <h2>Cadastre-se</h2>
+
+  <form class="ui form">
+    <p>Faça parte da maior rede... parte da maior rede parte da maior rede parte da maior rede parte da maior rede parte da maior rede...</p>
+
+    <div class="field half">
+      <label>Nome</label>
+      <input type="text" required>
+    </div>
+  
+    <div class="field half">
+      <label>Sobrenome</label>
+      <input type="text" required>
+    </div>
+  
+    <div class="field">
+      <label>E-mail</label>
+      <input type="email" required>
+    </div>
+  
+    <div class="field half">
+      <label>Senha</label>
+      <input type="password" required>
+    </div>
+  
+    <div class="field half">
+      <label>Confirme sua senha</label>
+      <input type="password" required>
+    </div>
+
+    <div class="actions">
+      <button type="submit" class="ui button green">Quero me cadastrar!</button>
+    </div>
+  </form>
 </section>
 {% endblock %}
