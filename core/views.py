@@ -38,6 +38,7 @@ def wish(request):
             new_wish = form.save()
             new_wish.user = request.user
             new_wish.save()
+            return HttpResponseRedirect(reverse('core.views.listar_desejos'))
         return HttpResponseRedirect(view_url)
 
     upload_url, upload_data = prepare_upload(request, view_url)
@@ -92,3 +93,9 @@ def track_bid(request, pk):
         t.user = request.user
     t.save()
     return HttpResponseRedirect(bid.link)
+
+@login_required
+def remove_wish(request, wish_id):
+    w = get_object_or_404(Wishlist,id=wish_id, user = request.user)
+    w.delete()
+    return HttpResponseRedirect(reverse('core.views.listar_desejos'))
