@@ -62,7 +62,7 @@ def website_home(request):
 @login_required
 def listar_desejos(request):
     controler = "wishes"
-    method = "listar_desejos"
+    method = "index"
     return render(request, "system/wishes/index.html",
         locals()
     )
