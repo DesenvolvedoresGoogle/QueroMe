@@ -15,7 +15,7 @@
     <p>Entre com os seus dados:</p>
     
     <div class="field">
-      <label>E-mail</label>
+      <label for="id_username">E-mail</label>
       <div class="input prepend">
         <div class="prepend"><i class="icon icon-envelope"></i></div>
         <input id="id_username"  name="username_login" type="email" placeholder="email@example.com" required autofocus>
@@ -23,14 +23,15 @@
     </div>
 
     <div class="field">
-      <label>Senha</label>
+      <label for="id_password">Senha</label>
       <div class="input prepend">
         <div class="prepend"><i class="icon icon-lock"></i></div>
         <input id="id_password"  name="password_login" type="password" placeholder="*******" required>
       </div>
     </div>
 
-      <input type="hidden" name="tipo_form" value="login">
+    <input type="hidden" name="tipo_form" value="login">
+
     <div class="actions">
       <button type="submit" class="ui button green">Entrar</button>
     </div>
@@ -44,31 +45,32 @@
     <p>Faça parte da maior rede... parte da maior rede parte da maior rede parte da maior rede parte da maior rede parte da maior rede...</p>
 
     <div class="field half">
-      <label>Nome</label>
+      <label for="id_first_name">Nome</label>
       <input id="id_first_name"  name="first_name" type="text" required>
     </div>
-  
+
     <div class="field half">
-      <label>Sobrenome</label>
+      <label for="id_last_name">Sobrenome</label>
       <input id="id_last_name"  name="last_name" type="text" required>
     </div>
-  
+
     <div class="field">
-      <label>E-mail</label>
-      <input id="id_email_"  name="email" type="email" required>
+      <label for="id_email">E-mail</label>
+      <input id="id_email"  name="email" type="email" required>
     </div>
-  
+
     <div class="field half">
-      <label>Senha</label>
-      <input id="id_password_"  name="password" type="password" required>
+      <label for="id_password">Senha</label>
+      <input id="id_password"  name="password" type="password" required>
     </div>
-  
+
     <div class="field half">
-      <label>Confirme sua senha</label>
+      <label for="id_password_confirmation">Confirme sua senha</label>
       <input id="id_password_confirmation"  name="password_confirmation" type="password" required>
     </div>
 
-      <input type="hidden" name="tipo_form" value="register">
+    <input type="hidden" name="tipo_form" value="register">
+
     <div class="actions">
       <button type="submit" class="ui button green">Quero me cadastrar!</button>
     </div>

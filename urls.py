@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url('^logout/$', 'django.contrib.auth.views.logout', name='logout'),
 
     url('^register/$', 'core.views.register', name='register'),
-    url('^wish/$', 'core.views.wish', name='wish'),
+    url('^wishes/new/$', 'core.views.wish', name='wish'),
     url('^wishes/$', 'core.views.listar_desejos', name='listar'),
     url(r'^wishes/show/(?P<wish_id>\d+)/$','core.views.show',name='show'),
     url(r'^wishes/delete/(?P<wish_id>\d+)/$','core.views.remove_wish',name='remove_wish'),

@@ -46,7 +46,7 @@ def register(request):
 @login_required
 def wish(request):
     controller = "wishes"
-    method = "new_wish"
+    method = "new"
     view_url = reverse('core.views.wish')
     if request.method == 'POST':
         form = WishlistForm(request.POST, request.FILES)
@@ -61,7 +61,7 @@ def wish(request):
     form = WishlistForm()
     uploads = Wishlist.objects.all()
 
-    return render(request, "form.html",
+    return render(request, "system/wishes/new.html",
         locals(),
     )
 

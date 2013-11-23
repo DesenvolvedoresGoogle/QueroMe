@@ -17,4 +17,20 @@ $(document).ready(function() {
     return $(this).siblings('input').focus();
   });
 
+  $('body').on('click', 'ul.categories li', function() {
+    $(this).siblings('.active').removeClass('active');
+    $(this).addClass('active');
+    $(this).parents('ul').next().val($(this).data('value'));
+  });
+
+  $('body').on('click', '.image-upload', function() {
+    $(this).next().click();
+  });
+
+  $('body').on('change', '.image-upload-field', function() {
+    alert('ok');
+    $(this).prev().addClass('selected');
+    $(this).prev().html('DEU');
+    $(this).next().click();
+  });
 });
