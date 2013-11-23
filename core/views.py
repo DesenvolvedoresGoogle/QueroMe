@@ -21,7 +21,7 @@ def register(request):
             return HttpResponseRedirect("/")
     else:
         form = FormUserRegistration()
-    return render(request, "registration/register.html",
+    return render(request, "system/users/index.html",
         locals()
     )
 
