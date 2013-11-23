@@ -2033,6 +2033,81 @@ table {
       left: auto;
       right: 0; }
 
+.ui.dropdown {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: border-radius 100ms ease, width 200ms ease;
+  -moz-transition: border-radius 100ms ease, width 200ms ease;
+  transition: border-radius 100ms ease, width 200ms ease; }
+  .ui.dropdown .menu {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: auto;
+    display: none;
+    font-size: 90%;
+    text-shadow: none;
+    top: 100%;
+    margin: 0;
+    min-width: 100%;
+    position: absolute;
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    white-space: nowrap;
+    z-index: 11; }
+    .ui.dropdown .menu a {
+      text-decoration: none; }
+    .ui.dropdown .menu .item {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      color: rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+      display: block;
+      text-align: left;
+      padding: 10px 15px;
+      -webkit-transition: background 250ms ease;
+      -moz-transition: background 250ms ease;
+      transition: background 250ms ease; }
+      .ui.dropdown .menu .item:first-child {
+        border-top: none; }
+      .ui.dropdown .menu .item:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+        z-index: 12; }
+  .ui.dropdown.pointing .menu {
+    margin-top: 10px; }
+    .ui.dropdown.pointing .menu:after {
+      background-color: #fff;
+      border: 0 solid rgba(0, 0, 0, 0.1);
+      border-width: 1px 0 0 1px;
+      content: "";
+      display: block;
+      height: 8px;
+      pointer-events: none;
+      position: absolute;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      width: 8px;
+      z-index: 2; }
+    .ui.dropdown.pointing .menu:after {
+      left: 50%;
+      margin: 0 0 0 -4px;
+      top: -5px; }
+  .ui.dropdown.top.right .menu {
+    bottom: auto;
+    left: auto;
+    right: 0;
+    top: 100%; }
+    .ui.dropdown.top.right .menu:after {
+      left: auto;
+      margin: 0;
+      right: 16px; }
+    .ui.dropdown.top.right .menu .item {
+      text-align: right; }
+
 .footer {
   background: #fdba33;
   box-shadow: inset 1px 0 5px rgba(0, 0, 0, 0.15);
@@ -2381,6 +2456,8 @@ main {
   [data-page="users#index"] .register .actions {
     clear: both; }
 
+[data-page="wishes#index"] .ui.item {
+  height: 340px; }
 [data-page="wishes#index"] .no-products {
   margin-top: 25px;
   text-align: center; }
