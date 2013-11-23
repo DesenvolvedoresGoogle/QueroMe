@@ -27,7 +27,7 @@ def register(request):
 
 @login_required
 def wish(request):
-    controler = "wish"
+    controler = "wishes"
     method = "new_wish"
     view_url = reverse('wish')
     if request.method == 'POST':
@@ -61,17 +61,17 @@ def website_home(request):
 
 @login_required
 def listar_desejos(request):
-    controler = "wish"
+    controler = "wishes"
     method = "listar_desejos"
-    return render(request, "system/list_desejos.html",
+    return render(request, "system/wishes/index.html",
         locals()
     )
 
 @login_required
 def show(request, wish_id):
-    controler = "show"
-    method = "see"
+    controler = "wishes"
+    method = "show"
     wish = get_object_or_404(Wishlist,id=wish_id, user = request.user)
-    return render(request, "system/show.html",
+    return render(request, "system/wishes/show.html",
         locals()
     )
