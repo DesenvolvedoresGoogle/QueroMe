@@ -2035,8 +2035,10 @@ table {
 
 .footer {
   background: #fdba33;
-  box-shadow: -1px 0 5px rgba(0, 0, 0, 0.15);
-  padding: 25px 0; }
+  box-shadow: inset 1px 0 5px rgba(0, 0, 0, 0.15);
+  padding: 0; }
+  .footer .page-content {
+    padding: 0; }
 
 .ui.form {
   max-width: 100%; }
