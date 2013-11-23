@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Categorie, Wishlist
+from models import Categorie, Wishlist, Company, Bid
 
 class CategorieAdmin(admin.ModelAdmin):
     model = Categorie
@@ -10,3 +10,5 @@ class WishlistAdmin(admin.ModelAdmin):
 
 admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(Wishlist, WishlistAdmin)
+admin.site.register(Company)
+admin.site.register(Bid)
