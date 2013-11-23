@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url('^admin/', include(admin.site.urls)),
 
     url('^login/$', 'django.contrib.auth.views.login', name='login'),
-    url('^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+    url('^logout/$', 'django.contrib.auth.views.logout',{'next_page': '/',}, name='logout'),
 
     url('^register/$', 'core.views.register', name='register'),
     url('^wishes/new/$', 'core.views.wish', name='wish'),
@@ -26,14 +26,14 @@ urlpatterns = patterns('',
     url('^users/$', 'core.views.register', name='register_index'),
     url('^track/(?P<pk>\d+)/$', 'core.views.track_bid', name='track_bid'),
 
-    #URL`s do novo layout.
-#    (r'^system/(.*)$', 'django.views.static.serve',
-#     {'document_root': 'templates/system/','show_indexes':True}),
-#    (r'^website/(.*)$', 'django.views.static.serve',
-#     {'document_root': 'templates/website/','show_indexes':True}),
-
     url('^system/$', 'core.views.system_home', name='system_home'),
     url('^$', 'core.views.website_home', name='website_home'),
 
     url(r'^download/(?P<pk>.+)$', 'core.views.download_handler',name='dowload_img'),
+
+#    #Pra fazer o OpenID
+#    url(r'^google/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
+#    url(r'^google/login-complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
+
+    url(r'^openid/', include('django_openid_auth.urls')),
 )
