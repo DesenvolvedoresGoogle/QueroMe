@@ -11,6 +11,7 @@ from django.shortcuts import get_object_or_404
 
 def register(request):
     controler = "register"
+    method = "user"
     if request.method == 'POST':
         form = FormUserRegistration(request.POST)
         if form.is_valid():
@@ -27,6 +28,7 @@ def register(request):
 @login_required
 def wish(request):
     controler = "wish"
+    method = "new_wish"
     view_url = reverse('wish')
     if request.method == 'POST':
         form = WishlistForm(request.POST, request.FILES)
@@ -45,24 +47,30 @@ def wish(request):
 
 def system_home(request):
     controler = "system_home"
+    method = "see"
     return render(request, "system/index.html",
         locals()
     )
 
 def website_home(request):
     controler = "website_home"
+    method = "see"
     return render(request, "website/index.html",
         locals()
     )
 
+@login_required
 def listar_desejos(request):
-    controler = "listar_desejos"
+    controler = "wish"
+    method = "listar_desejos"
     return render(request, "system/list_desejos.html",
         locals()
     )
 
+@login_required
 def show(request, wish_id):
     controler = "show"
+    method = "see"
     wish = get_object_or_404(Wishlist,id=wish_id)
     return render(request, "system/show.html",
         locals()
