@@ -2073,13 +2073,13 @@ main.home {
     width: 80px;
     height: 80px; }
     .box-banner .pic.roupas {
-      background: url("../images/website/icons/img-roupas.png") center center no-repeat; }
+      background: url("/images/icons/roupas.png") center center no-repeat; }
     .box-banner .pic.eletro {
-      background: url("../images/website/icons/img-eletronicos.png") center no-repeat; }
+      background: url("/images/icons/eletronicos.png") center no-repeat; }
     .box-banner .pic.jogos {
-      background: url("../images/website/icons/img-jogos.png") center no-repeat; }
+      background: url("/images/icons/jogos.png") center no-repeat; }
     .box-banner .pic.outros {
-      background: url("../images/website/icons/img-outros.png") center no-repeat; }
+      background: url("/images/icons/outros.png") center no-repeat; }
 
 .entenda-querome {
   padding: 10px 0; }
