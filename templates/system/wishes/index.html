@@ -5,6 +5,7 @@
 <div class="ui items">
 {% for w in request.user.wishlist_set.all %}
   <a href="{% url show w.id %}" class="item column-4">
+    <span class="ui label floating">1</span>
     <div class="image">
       {% if w.file %}
           <img src="{{ w.file.url }}" alt="{{ w.product }}">
@@ -23,9 +24,8 @@
 </div>
 
 {% if not request.user.wishlist_set.count %}
-<div class="ui alert">
-  Não há produtos na sua wishlist. <a href="{% url wish %}">Cadastre agora!</a>
-  <a href="#" class="close"><i class="icon icon-times-circle"></i></a>
+<div class="no-products">
+  <img src="/images/system/no-products.png" alt="Comece a cadastrar seus produtos e monte sua lista de desejos.">
 </div>
 {% endif %}
 

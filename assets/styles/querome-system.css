@@ -2214,6 +2214,17 @@ table {
   padding: 5px 10px;
   text-transform: uppercase;
   vertical-align: middle; }
+  .ui.label.floating {
+    background: #d95c5c;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: bold;
+    left: 99%;
+    margin: 0em 0em 0em -15px !important;
+    padding: 4px 8px;
+    position: absolute;
+    top: -10px;
+    z-index: 100; }
   .ui.label.ribbon {
     border-radius: 0 2px 2px 0;
     color: #fff;
@@ -2313,10 +2324,12 @@ a {
 .header .add {
   margin-top: 35px; }
 .header .user {
-  margin-top: 30px; }
+  margin-top: 32px; }
   .header .user img {
     border-radius: 100%;
-    display: block; }
+    display: block;
+    height: 50px;
+    width: 50px; }
 
 main {
   flex: 1;
@@ -2367,6 +2380,10 @@ main {
       float: right; }
   [data-page="users#index"] .register .actions {
     clear: both; }
+
+[data-page="wishes#index"] .no-products {
+  margin-top: 25px;
+  text-align: center; }
 
 [data-page="wishes#show"] .sidebar .image {
   position: relative; }
