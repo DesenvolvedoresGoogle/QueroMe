@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 
 def register(request):
     controller = "register"
-    method = "user"
+    method = "index"
     if request.method == 'POST':
         form = FormUserRegistration(request.POST)
         if form.is_valid():
