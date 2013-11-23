@@ -79,6 +79,6 @@ class Bid(models.Model):
     company = models.ForeignKey(Company)
     product = models.CharField(max_length=200,verbose_name='Produto')
     price = models.DecimalField(max_digits=20,decimal_places=2)
-
+    link = models.CharField(max_length=200,verbose_name='link da compra')
     def __unicode__(self):
         return unicode(self.product)
