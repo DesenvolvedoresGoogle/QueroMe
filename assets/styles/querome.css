@@ -1983,6 +1983,7 @@ a {
   .page-content:after {
     clear: both; }
 
+g
 main {
   flex: 1;
   padding: 30px 0 50px !important; }
@@ -2070,3 +2071,7 @@ main.home {
     font-size: 1.05em;
     text-align: center;
     padding-bottom: 40px; }
+
+.combo-btn {
+  margin-top: 40px;
+  text-align: right; }
