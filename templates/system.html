@@ -30,7 +30,7 @@
 
     <div class="user column-1">
         {% load gravatar %}
-        <img src="{% gravatar_for_email request.user.email %}" alt="Caio Tarifa">
+        <img src="{% gravatar_for_email request.user.email 50 g%}" alt="Caio Tarifa">
     </div>
   {% endif %}
   </div>
