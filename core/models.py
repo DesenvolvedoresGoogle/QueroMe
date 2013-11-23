@@ -68,3 +68,17 @@ class Wishlist(models.Model):
     @property
     def filename(self):
         return self.file.name.rsplit('/', 1)[-1]
+
+class Company(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return unicode(self.name)
+
+class Bid(models.Model):
+    company = models.ForeignKey(Company)
+    product = models.CharField(max_length=200,verbose_name='Produto')
+    price = models.DecimalField(max_digits=20,decimal_places=2)
+
+    def __unicode__(self):
+        return unicode(self.product)
