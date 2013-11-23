@@ -1,20 +1,43 @@
 {% extends "system.html" %}
 
 {% block system %}
-<aside role="sidebar">
-  <img src="http://placehold.it/300x200" alt="NOME">
-  
-  <dl>
-    <dt>Categoria</dt>
-    <dd>Eletrônicos</dd>
-    
-    <dt>Valor Desejado</dt>
-    <dd>R$ 2.000,00</dd>
-  </dl>
+<div class="row">
+<aside role="sidebar" class="sidebar column-4">
+  <div class="image">
+    <img src="http://placehold.it/300x200" alt="NOME">
+  </div>
+
+  <div class="actions">
+    <a href="#" class="ui button"><i class="icon icon-pencil"></i> Editar</a>
+    <a href="#" class="ui button red" data-confirm="Tem certeza que deseja remover?"><i class="icon icon-times"></i> Remover</a>
+  </div>
 </aside>
 
-<div class="content">
-  <h1>Teste</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus adipiscing vulputate urna ut lacinia. Phasellus viverra bibendum felis non aliquet. In molestie sodales sagittis. Suspendisse pulvinar aliquam tempus. Praesent mi sem, tristique sed interdum eu, accumsan et augue. Vivamus eleifend, metus non pellentesque bibendum, augue elit elementum quam, at pellentesque diam nibh cursus dui.</p>
+<section class="content column-8">
+  <h1 class="name">Teste</h1>
+  <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus adipiscing vulputate urna ut lacinia. Phasellus viverra bibendum felis non aliquet. In molestie sodales sagittis. Suspendisse pulvinar aliquam tempus. Praesent mi sem, tristique sed interdum eu, accumsan et augue. Vivamus eleifend, metus non pellentesque bibendum, augue elit elementum quam, at pellentesque diam nibh cursus dui.</p>
+
+  <div class="subtitle">
+    <h2>Ofertas</h2>
+  </div>
+
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Anunciantes</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+      <tr>
+        <td>Submarino</td>
+        <td>R$100,00</td>
+        <td><a href="#"><i class="icon icon-shopping-cart"></i></a></td>
+      </tr>
+    <tbody>
+    </tbody>
+  </table>
+
+</section>
 </div>
 {% endblock %}
