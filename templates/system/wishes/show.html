@@ -21,26 +21,32 @@
   <h1 class="name">{{ w.product }}</h1>
   <p class="description">{{ w.description|linebreaks }}</p>
 
-  <div class="subtitle">
-    <h2>Ofertas</h2>
-  </div>
+  {% if results.count %}
+      <div class="subtitle">
+        <h2>Ofertas</h2>
+      </div>
 
-  <table class="ui table">
-    <thead>
-      <tr>
-        <th>Anunciantes</th>
-        <th>Valor</th>
-        <th></th>
-      </tr>
-    </thead>
-      <tr>
-        <td>Submarino</td>
-        <td>R$100,00</td>
-        <td><a href="#"><i class="icon icon-shopping-cart"></i></a></td>
-      </tr>
-    <tbody>
-    </tbody>
-  </table>
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>Anunciantes</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th></th>
+          </tr>
+        </thead>
+          {% for r in results %}
+          <tr>
+            <td>{{ r.company }}</td>
+            <td>{{ r.product }}</td>
+            <td>{{ r.price }}</td>
+            <td><a href="#"><i class="icon icon-shopping-cart"></i></a></td>
+          </tr>
+          {% endfor %}
+        <tbody>
+        </tbody>
+      </table>
+    {% endif %}
 
 </section>
 </div>

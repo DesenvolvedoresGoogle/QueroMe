@@ -6,8 +6,10 @@ from django.contrib.auth.decorators import login_required
 from filetransfers.api import prepare_upload, serve_file
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login as authlogin
-from models import Wishlist
+from models import Wishlist, Bid
 from django.shortcuts import get_object_or_404
+from search.core import search
+
 
 def register(request):
     controller = "users"
@@ -73,6 +75,7 @@ def show(request, wish_id):
     controller = "wishes"
     method = "show"
     w = get_object_or_404(Wishlist,id=wish_id, user = request.user)
+    results = search(Bid, w.product)
     return render(request, "system/wishes/show.html",
         locals()
     )
