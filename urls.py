@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url('^admin/', include(admin.site.urls)),
 
     url('^login/$', 'django.contrib.auth.views.login', name='login'),
-    url('^logout/$', 'django.contrib.auth.views.logout', name='logout'),
+    url('^logout/$', 'django.contrib.auth.views.logout',{'next_page': '/',}, name='logout'),
 
     url('^register/$', 'core.views.register', name='register'),
     url('^wish/$', 'core.views.wish', name='wish'),
@@ -30,4 +30,10 @@ urlpatterns = patterns('',
     url('^$', 'core.views.website_home', name='website_home'),
 
     url(r'^download/(?P<pk>.+)$', 'core.views.download_handler',name='dowload_img'),
+
+#    #Pra fazer o OpenID
+#    url(r'^google/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
+#    url(r'^google/login-complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
+
+    url(r'^openid/', include('django_openid_auth.urls')),
 )

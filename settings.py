@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'gravatar',
     'widget_tweaks',
     'django_openid_auth',
+     'openid',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -70,5 +71,13 @@ SEARCH_BACKEND = 'search.backends.immediate_update'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-
+    'auth.GoogleBackend',
 )
+
+OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
+OPENID_CREATE_USERS = True
+OPENID_UPDATE_DETAILS_FROM_SREG = True
+
+GAE_SETTINGS_MODULES = (
+    'gae_openid_settings',
+    )
