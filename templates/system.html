@@ -31,7 +31,7 @@
     <div class="user column-1">
       <div class="ui dropdown pointing top right">
         {% load gravatar %}
-        <img src="{% gravatar_for_email request.user.email %}" alt="Caio Tarifa">
+        <img src="{% gravatar_for_email request.user.email 50 g%}" alt="{{ request.user.first_name }}">
         <div class="menu">
           <a href="#" class="item">Desconectar</a>
         </div>

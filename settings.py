@@ -27,6 +27,7 @@ INSTALLED_APPS = (
     'filetransfers',
     'search',
     'gravatar',
+    'widget_tweaks'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +56,7 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
 ROOT_URLCONF = 'urls'
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/register/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
 
