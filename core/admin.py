@@ -8,7 +8,11 @@ class CategorieAdmin(admin.ModelAdmin):
 class WishlistAdmin(admin.ModelAdmin):
     model = Wishlist
 
+class BidAdmin(admin.ModelAdmin):
+    model = Bid
+    list_display = ['company','product','price','link','clicks']
+
 admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(Wishlist, WishlistAdmin)
 admin.site.register(Company)
-admin.site.register(Bid)
+admin.site.register(Bid,BidAdmin)
