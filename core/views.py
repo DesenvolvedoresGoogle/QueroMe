@@ -36,12 +36,6 @@ def register(request):
                     user.backend = 'django.contrib.auth.backends.ModelBackend'
                     authlogin(request, user)
                     return HttpResponseRedirect(reverse('core.views.listar_desejos'))
-            else:
-                mensagem = True
-                msg = {
-                    u'mensagem': u'Login ou senha inválida',
-                    u'tipo': u'danger'
-                }
 
     else:
         form = FormUserRegistration()
