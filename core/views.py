@@ -20,18 +20,22 @@ def register(request):
             form = FormUserRegistration(request.POST)
             if form.is_valid():
                 new_user = form.save()
+                new_user.backend = 'django.contrib.auth.backends.ModelBackend'
+                authlogin(request, new_user)
                 return HttpResponseRedirect(reverse('core.views.listar_desejos'))
             else:
                 return render(request, "system/users/index.html",
                     locals()
                 )
         else:
-            username = request.POST['username']
-            password = request.POST['password']
+            username = request.POST['username_login']
+            password = request.POST['password_login']
             user = authenticate(username=username, password=password)
             if user is not None:
                 if user.is_active:
+                    user.backend = 'django.contrib.auth.backends.ModelBackend'
                     authlogin(request, user)
+                    return HttpResponseRedirect(reverse('core.views.listar_desejos'))
             else:
                 mensagem = True
                 msg = {
