@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from filetransfers.api import prepare_upload, serve_file
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login as authlogin
-from models import Wishlist, Bid
+from models import Wishlist, Bid, Track
 from django.shortcuts import get_object_or_404
 from search.core import search
 
@@ -83,3 +83,12 @@ def show(request, wish_id):
 def download_handler(request, pk):
     upload = get_object_or_404(Wishlist, pk=pk)
     return serve_file(request, upload.file, save_as=True)
+
+def track_bid(request, pk):
+    bid = get_object_or_404(Bid, pk=pk)
+    t = Track()
+    t.bid = bid
+    if request.user:
+        t.user = request.user
+    t.save()
+    return HttpResponseRedirect(bid.link)
