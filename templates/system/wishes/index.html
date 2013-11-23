@@ -6,7 +6,11 @@
 {% for w in request.user.wishlist_set.all %}
   <a href="{% url show w.id %}" class="item column-4">
     <div class="image">
-      <img src="http://placehold.it/300x200" alt="{{ w.product }}">
+      {% if w.file %}
+          <img src="{{ w.file.url }}" alt="{{ w.product }}">
+      {% else %}
+        <img src="http://placehold.it/300x200" alt="{{ w.product }}">
+      {% endif %}
       <span class="ui ribbon label">{{ w.category }}</span>
     </div>
     <div class="content">
