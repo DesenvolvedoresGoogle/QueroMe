@@ -32,5 +32,5 @@ urlpatterns = patterns('',
     url('^system/$', 'core.views.system_home', name='system_home'),
     url('^website/$', 'core.views.website_home', name='website_home'),
 
-    url(r'^download/(?P<pk>.+)$', 'download_handler',name='dowload_img'),
+    url(r'^download/(?P<pk>.+)$', 'core.views.download_handler',name='dowload_img'),
 )
