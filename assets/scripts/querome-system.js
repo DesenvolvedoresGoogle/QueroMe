@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $('.user img').on('click', function() {
     $(this).toggleClass('active').end();
-    $(this).next().slideToggle();
+    return $(this).next().slideToggle();
   });
 
   $('body').on('click', '[data-confirm]', function() {
@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   $('body').on('click', 'span.prepend, span.append', function() {
-    $(this).siblings('input').focus();
+    return $(this).siblings('input').focus();
   });
 
 });
