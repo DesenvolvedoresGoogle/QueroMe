@@ -2265,6 +2265,7 @@ table {
     .ui.items .item > .image > img {
       border-radius: 2px;
       display: block;
+      max-height: 200px;
       width: 100%; }
     .ui.items .item > .image .ui.label.ribbon {
       bottom: 10px;
@@ -2456,7 +2457,7 @@ main {
   [data-page="users#index"] .register .actions {
     clear: both; }
 
-[data-page="wishes#index"] .ui.item {
+[data-page="wishes#index"] .ui.items .item {
   height: 340px; }
 [data-page="wishes#index"] .no-products {
   margin-top: 25px;

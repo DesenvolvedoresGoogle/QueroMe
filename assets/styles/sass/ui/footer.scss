@@ -5,5 +5,22 @@
 
   .page-content {
     padding: 0;
+
+    p {
+  		font-size: 1.05em;
+  		color: #fff;
+  		font-weight: 300;
+
+ 		}
+ 		img {
+	  	display: block;
+	  	padding:10px 0 0px 0;
+  	}
+
+  	.icon {
+  		color:#ff0000;
+  	}
+
   }
-}
+  
+} 
