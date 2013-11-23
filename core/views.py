@@ -15,6 +15,7 @@ def register(request):
     controller = "users"
     method = "index"
     if request.method == 'POST':
+        tipo_form = request.POST['tipo_form']
         form = FormUserRegistration(request.POST)
         if form.is_valid():
             new_user = form.save()
