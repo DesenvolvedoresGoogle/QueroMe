@@ -5,7 +5,7 @@ from forms import FormUserRegistration, WishlistForm
 from django.contrib.auth.decorators import login_required
 from filetransfers.api import prepare_upload, serve_file
 from django.core.urlresolvers import reverse
-from django.contrib.auth import login as authlogin
+from django.contrib.auth import authenticate, login as authlogin
 from models import Wishlist, Bid, Track
 from django.shortcuts import get_object_or_404
 from search.core import search
@@ -16,12 +16,29 @@ def register(request):
     method = "index"
     if request.method == 'POST':
         tipo_form = request.POST['tipo_form']
-        form = FormUserRegistration(request.POST)
-        if form.is_valid():
-            new_user = form.save()
-            new_user.backend = 'django.contrib.auth.backends.ModelBackend'
-            authlogin(request, new_user)
-            return HttpResponseRedirect("/")
+        if tipo_form == 'register':
+            form = FormUserRegistration(request.POST)
+            if form.is_valid():
+                new_user = form.save()
+                return HttpResponseRedirect(reverse('core.views.listar_desejos'))
+            else:
+                return render(request, "system/users/index.html",
+                    locals()
+                )
+        else:
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    authlogin(request, user)
+            else:
+                mensagem = True
+                msg = {
+                    u'mensagem': u'Login ou senha inválida',
+                    u'tipo': u'danger'
+                }
+
     else:
         form = FormUserRegistration()
     return render(request, "system/users/index.html",
