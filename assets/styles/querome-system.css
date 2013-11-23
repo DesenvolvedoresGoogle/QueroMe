@@ -1797,6 +1797,73 @@ table {
   content: "\f196"; }
 
 /* UI */
+.ui.alert {
+  background-color: #d0e3ef;
+  background-image: -webkit-linear-gradient(top, #d8ebf8, #d0e3ef);
+  background-image: linear-gradient(to bottom, #d8ebf8, #d0e3ef);
+  border: 1px solid #97c1da;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #264C73;
+  font-size: 100%;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 15px 46px 15px 15px;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms; }
+  .ui.alert:hover {
+    border-color: #5f9fc6; }
+  .ui.alert > p {
+    margin-bottom: 0; }
+  .ui.alert p + p {
+    margin-top: 5px; }
+  .ui.alert .buttons {
+    margin-top: 15px; }
+  .ui.alert .close {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+    opacity: 0.5;
+    position: absolute;
+    right: 12px;
+    text-decoration: none;
+    top: 17px;
+    -webkit-transition: opacity 250ms ease;
+    -moz-transition: opacity 250ms ease;
+    transition: opacity 250ms ease;
+    width: 16px; }
+    .ui.alert .close:hover {
+      opacity: 1; }
+  .ui.alert.danger {
+    background-color: #efd0d0;
+    background-image: -webkit-linear-gradient(top, #f8d8d8, #efd0d0);
+    background-image: linear-gradient(to bottom, #f8d8d8, #efd0d0);
+    border-color: #da9797;
+    color: #9c2400; }
+    .ui.alert.danger:hover {
+      border-color: #c65f5f; }
+  .ui.alert.success {
+    background-color: #dff0d8;
+    background-image: -webkit-linear-gradient(top, #e2eed9, #d5e5cf);
+    background-image: linear-gradient(to bottom, #e2eed9, #d5e5cf);
+    border-color: #a3d48e;
+    color: #468847; }
+    .ui.alert.success:hover {
+      border-color: #82ac73; }
+  .ui.alert.warning {
+    background-color: #f5dac0;
+    background-image: -webkit-linear-gradient(top, #ffe3c8, #f5dac0);
+    background-image: linear-gradient(to bottom, #ffe3c8, #f5dac0);
+    border-color: #dca874;
+    color: #613a00; }
+    .ui.alert.warning:hover {
+      border-color: #cd8237; }
+
 .ui.button {
   background-color: #fafafa;
   background-image: -webkit-linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
