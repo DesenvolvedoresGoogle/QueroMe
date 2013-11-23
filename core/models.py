@@ -50,7 +50,8 @@ class UserProfile(models.Model):
 
 class Categorie(models.Model):
     category = models.CharField(max_length=200)
-
+    def qtd(self):
+        return self.wishlist_set.count()
     def __unicode__(self):
         return unicode(self.category)
 
