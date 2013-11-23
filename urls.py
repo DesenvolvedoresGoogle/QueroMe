@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url('^wishes/$', 'core.views.listar_desejos', name='listar'),
     url(r'^wishes/show/(?P<wish_id>\d+)/$','core.views.show',name='show'),
     url('^users/$', 'core.views.register', name='register_index'),
+    url('^track/(?P<pk>\d+)/$', 'core.views.track_bid', name='track_bid'),
 
     #URL`s do novo layout.
 #    (r'^system/(.*)$', 'django.views.static.serve',

@@ -40,7 +40,7 @@
             <td>{{ r.company }}</td>
             <td>{{ r.product }}</td>
             <td>{{ r.price }}</td>
-            <td><a href="#"><i class="icon icon-shopping-cart"></i></a></td>
+            <td><a href="{% url track_bid r.id %}"><i class="icon icon-shopping-cart"></i></a></td>
           </tr>
           {% endfor %}
         <tbody>
