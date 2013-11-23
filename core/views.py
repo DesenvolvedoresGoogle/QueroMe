@@ -10,6 +10,7 @@ from models import Wishlist
 from django.shortcuts import get_object_or_404
 
 def register(request):
+    controler = "register"
     if request.method == 'POST':
         form = FormUserRegistration(request.POST)
         if form.is_valid():
@@ -19,12 +20,13 @@ def register(request):
             return HttpResponseRedirect("/")
     else:
         form = FormUserRegistration()
-    return render(request, "registration/register.html", {
-        'form': form,
-        })
+    return render(request, "registration/register.html",
+        locals()
+    )
 
 @login_required
 def wish(request):
+    controler = "wish"
     view_url = reverse('wish')
     if request.method == 'POST':
         form = WishlistForm(request.POST, request.FILES)
@@ -37,29 +39,30 @@ def wish(request):
         form = WishlistForm()
 
     upload_url, upload_data = prepare_upload(request, view_url)
-    return render(request, "form.html", {
-        'form': form,
-        'upload_url': upload_url,
-        'upload_data': upload_data,
-        }
+    return render(request, "form.html",
+        locals(),
     )
 
 def system_home(request):
+    controler = "system_home"
     return render(request, "system/index.html",
         locals()
     )
 
 def website_home(request):
+    controler = "website_home"
     return render(request, "website/index.html",
         locals()
     )
 
 def listar_desejos(request):
+    controler = "listar_desejos"
     return render(request, "system/list_desejos.html",
         locals()
     )
 
 def show(request, wish_id):
+    controler = "show"
     wish = get_object_or_404(Wishlist,id=wish_id)
     return render(request, "system/show.html",
         locals()
