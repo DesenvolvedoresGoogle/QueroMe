@@ -4,7 +4,11 @@
 <div class="row">
 <aside role="sidebar" class="sidebar column-4">
   <div class="image">
-    <img src="http://placehold.it/300x200" alt="NOME">
+      {% if w.file %}
+          <img src="{{ w.file.url }}" alt="{{ w.product }}">
+      {% else %}
+          <img src="http://placehold.it/300x200" alt="{{ w.product }}">
+      {% endif %}
   </div>
 
   <div class="actions">
@@ -14,8 +18,8 @@
 </aside>
 
 <section class="content column-8">
-  <h1 class="name">Teste</h1>
-  <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus adipiscing vulputate urna ut lacinia. Phasellus viverra bibendum felis non aliquet. In molestie sodales sagittis. Suspendisse pulvinar aliquam tempus. Praesent mi sem, tristique sed interdum eu, accumsan et augue. Vivamus eleifend, metus non pellentesque bibendum, augue elit elementum quam, at pellentesque diam nibh cursus dui.</p>
+  <h1 class="name">{{ w.product }}</h1>
+  <p class="description">{{ w.description|linebreaks }}</p>
 
   <div class="subtitle">
     <h2>Ofertas</h2>
