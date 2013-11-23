@@ -2132,6 +2132,15 @@ table {
   padding: 0; }
   .footer .page-content {
     padding: 0; }
+    .footer .page-content p {
+      font-size: 1.05em;
+      color: #fff;
+      font-weight: 300; }
+    .footer .page-content img {
+      display: block;
+      padding: 10px 0 0px 0; }
+    .footer .page-content .icon {
+      color: #ff0000; }
 
 .ui.form {
   max-width: 100%; }
@@ -2576,9 +2585,17 @@ main {
     [data-page="wishes#new"] .new-product .image-upload:hover {
       background: #f7f7f7;
       border-color: #ddd; }
+    [data-page="wishes#new"] .new-product .image-upload.selected {
+      padding: 0; }
     [data-page="wishes#new"] .new-product .image-upload .icon {
       color: #999;
       font-size: 300%; }
+    [data-page="wishes#new"] .new-product .image-upload img {
+      border-radius: 5px;
+      display: block;
+      width: 284px; }
+  [data-page="wishes#new"] .new-product aside input {
+    display: none; }
   [data-page="wishes#new"] .new-product .content {
     float: right; }
     [data-page="wishes#new"] .new-product .content .categories {

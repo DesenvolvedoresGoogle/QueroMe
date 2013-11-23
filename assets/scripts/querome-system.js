@@ -27,10 +27,13 @@ $(document).ready(function() {
     $(this).next().click();
   });
 
-  $('body').on('change', '.image-upload-field', function() {
-    alert('ok');
-    $(this).prev().addClass('selected');
-    $(this).prev().html('DEU');
-    $(this).next().click();
+  $('body').on('change', '.image-upload-field', function(event) {
+    var img = document.createElement('img');
+    var reader = new FileReader();
+    reader.onloadend = function() {
+      img.src = reader.result;
+    }
+    reader.readAsDataURL(event.originalEvent.srcElement.files[0]);
+    $(this).prev().addClass('selected').html(img);
   });
 });

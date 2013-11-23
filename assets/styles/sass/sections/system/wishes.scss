@@ -135,12 +135,19 @@
         background: #f7f7f7;
         border-color: #ddd;
       }
+      &.selected { padding: 0; }
       .icon {
         color: #999;
         font-size: 300%;
       }
+      img {
+        border-radius: 5px;
+        display: block;
+        width: 284px;
+      }
     }
     aside {
+      input { display: none; }
     }
     .content {
       float: right;
