@@ -20,9 +20,9 @@ urlpatterns = patterns('',
 
     url('^register/$', 'core.views.register', name='register'),
     url('^wish/$', 'core.views.wish', name='wish'),
-    url('^listar-desejos/$', 'core.views.listar_desejos', name='listar'),
+    url('^wishes/$', 'core.views.listar_desejos', name='listar'),
 #    url('^system/show/$', 'core.views.show', name='show'),
-    url(r'^system/show/(?P<wish_id>\d+)/$','core.views.show',name='show'),
+    url(r'^wishes/show/(?P<wish_id>\d+)/$','core.views.show',name='show'),
 
     #URL`s do novo layout.
 #    (r'^system/(.*)$', 'django.views.static.serve',
