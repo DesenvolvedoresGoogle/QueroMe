@@ -29,8 +29,13 @@
     </div>
 
     <div class="user column-1">
+      <div class="ui dropdown pointing top right">
         {% load gravatar %}
         <img src="{% gravatar_for_email request.user.email %}" alt="Caio Tarifa">
+        <div class="menu">
+          <a href="#" class="item">Desconectar</a>
+        </div>
+      </div>
     </div>
   {% endif %}
   </div>
