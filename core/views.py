@@ -29,7 +29,7 @@ def register(request):
 def wish(request):
     controller = "wishes"
     method = "new_wish"
-    view_url = reverse('core.views.upload_handler')
+    view_url = reverse('core.views.wish')
     if request.method == 'POST':
         form = WishlistForm(request.POST, request.FILES)
         if form.is_valid():
