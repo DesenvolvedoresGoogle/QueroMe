@@ -27,6 +27,7 @@ INSTALLED_APPS = (
     'filetransfers',
     'search',
     'gravatar',
+    'widget_tweaks'
 )
 
 MIDDLEWARE_CLASSES = (
