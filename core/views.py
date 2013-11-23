@@ -71,7 +71,7 @@ def listar_desejos(request):
 def show(request, wish_id):
     controler = "show"
     method = "see"
-    wish = get_object_or_404(Wishlist,id=wish_id)
+    wish = get_object_or_404(Wishlist,id=wish_id, user = request.user)
     return render(request, "system/show.html",
         locals()
     )
