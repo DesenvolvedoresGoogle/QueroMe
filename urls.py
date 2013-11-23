@@ -26,12 +26,6 @@ urlpatterns = patterns('',
     url('^users/$', 'core.views.register', name='register_index'),
     url('^track/(?P<pk>\d+)/$', 'core.views.track_bid', name='track_bid'),
 
-    #URL`s do novo layout.
-#    (r'^system/(.*)$', 'django.views.static.serve',
-#     {'document_root': 'templates/system/','show_indexes':True}),
-#    (r'^website/(.*)$', 'django.views.static.serve',
-#     {'document_root': 'templates/website/','show_indexes':True}),
-
     url('^system/$', 'core.views.system_home', name='system_home'),
     url('^$', 'core.views.website_home', name='website_home'),
 
