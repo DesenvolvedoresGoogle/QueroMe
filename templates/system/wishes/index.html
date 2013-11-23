@@ -5,7 +5,7 @@
 <div class="ui items">
 {% for w in request.user.wishlist_set.all %}
   <a href="{% url show w.id %}" class="item column-4">
-    <span class="ui label floating">1</span>
+    {% if w.count_bids %}<span class="ui label floating">{{ w.count_bids }}</span>{% endif %}
     <div class="image">
       {% if w.file %}
           <img src="{{ w.file.url }}" alt="{{ w.product }}">

@@ -5,35 +5,38 @@
 <section class="new-product">
   <h2>Cadastro do produto</h2>
 
-  <form class="ui form">
+  <form action="{{ upload_url }}" method="POST" enctype="multipart/form-data" class="ui form">
+      {% load filetransfers %}
+      {% csrf_token %}
+      {% render_upload_data upload_data %}
     <aside role="sidebar" class="column-4">
       <div class="image-upload">
         <i class="icon icon-upload"></i>
         <p>Clique aqui para enviar sua imagem.</p>
       </div>
-      <input class="image-upload-field" type="file">
+      <input class="image-upload-field" type="file" id="id_file" name="file">
     </aside>
 
     <div class="content column-7">
       <div class="field">
-        <label>Título</label>
-        <input type="text" autofocus required>
+        <label for="id_product">Título</label>
+        <input type="text" id="id_product" name="product" autofocus required>
       </div>
 
       <div class="field">
         <label>Categoria</label>
         <ul class="categories">
-          <li class="active" data-value="1"><img src="/images/icons/roupas.png" alt="Roupas"> <span>Roupas</span></li>
-          <li data-value="2"><img src="/images/icons/eletronicos.png" alt="Eletrônicos"> <span>Eletrônicos</span></li>
-          <li data-value="3"><img src="/images/icons/jogos.png" alt="Jogos"> <span>Jogos</span></li>
-          <li data-value="4"><img src="/images/icons/outros.png" alt="Outros"> <span>Outros</span></li>
+          <li class="active" data-value="5741031244955648"><img src="/images/icons/roupas.png" alt="Roupas"> <span>Roupas</span></li>
+          <li data-value="6270652252160000"><img src="/images/icons/eletronicos.png" alt="Eletrônicos"> <span>Eletrônicos</span></li>
+          <li data-value="5649050225344512"><img src="/images/icons/jogos.png" alt="Jogos"> <span>Jogos</span></li>
+          <li data-value="5724160613416960"><img src="/images/icons/outros.png" alt="Outros"> <span>Outros</span></li>
         </ul>
-        <input type="hidden" value="1">
+        <input type="hidden" name="category" value="1">
       </div>
 
       <div class="field">
-        <label>Descrição</label>
-        <textarea></textarea>
+        <label for="id_description">Descrição</label>
+        <textarea id="id_description" name="description"></textarea>
       </div>
 
       <div class="actions">

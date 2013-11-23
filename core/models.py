@@ -6,6 +6,7 @@ from string import ascii_letters, join
 from django.core.urlresolvers import reverse
 from django.core.mail import send_mail
 from djangotoolbox.fields import BlobField
+from search.core import search
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
@@ -62,6 +63,12 @@ class Wishlist(models.Model):
     description = models.TextField(blank=True, null=True, verbose_name=u'Descrição')
     image = BlobField(verbose_name='Imagem',blank=True, null = True)
     file = models.FileField(upload_to='uploads/%Y/%m/%d/%H/%M/%S/',blank=True, null = True)
+
+    def count_bids(self):
+        if self.product:
+            results = search(Bid, self.product)
+            return results.count()
+
     def __unicode__(self):
         return unicode(self.product)
 
