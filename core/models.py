@@ -63,3 +63,7 @@ class Wishlist(models.Model):
     file = models.FileField(upload_to='uploads/%Y/%m/%d/%H/%M/%S/',blank=True, null = True)
     def __unicode__(self):
         return unicode(self.product)
+
+    @property
+    def filename(self):
+        return self.file.name.rsplit('/', 1)[-1]

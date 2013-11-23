@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from forms import FormUserRegistration, WishlistForm
 from django.contrib.auth.decorators import login_required
-from filetransfers.api import prepare_upload
+from filetransfers.api import prepare_upload, serve_file
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login as authlogin
 from models import Wishlist
@@ -29,18 +29,19 @@ def register(request):
 def wish(request):
     controller = "wishes"
     method = "new_wish"
-    view_url = reverse('wish')
+    view_url = reverse('core.views.wish')
     if request.method == 'POST':
         form = WishlistForm(request.POST, request.FILES)
         if form.is_valid():
             new_wish = form.save()
             new_wish.user = request.user
             new_wish.save()
-            return HttpResponseRedirect("/")
-    else:
-        form = WishlistForm()
+        return HttpResponseRedirect(view_url)
 
     upload_url, upload_data = prepare_upload(request, view_url)
+    form = WishlistForm()
+    uploads = Wishlist.objects.all()
+
     return render(request, "form.html",
         locals(),
     )
@@ -75,3 +76,7 @@ def show(request, wish_id):
     return render(request, "system/wishes/show.html",
         locals()
     )
+
+def download_handler(request, pk):
+    upload = get_object_or_404(Wishlist, pk=pk)
+    return serve_file(request, upload.file, save_as=True)
