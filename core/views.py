@@ -10,7 +10,7 @@ from models import Wishlist
 from django.shortcuts import get_object_or_404
 
 def register(request):
-    controller = "register"
+    controller = "users"
     method = "index"
     if request.method == 'POST':
         form = FormUserRegistration(request.POST)
